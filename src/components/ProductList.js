@@ -9,11 +9,15 @@ class ProductList extends Component {
     console.log(productList);
 
     const productComponents = productList.map((product, index) => {
-      return <Product
-        productName={product.productName}
-        description={product.description}
-        price={product.price}
-        key={index} />;
+      return (
+        <Product
+          productName={product.productName}
+          description={product.description}
+          price={product.price}
+          deleteProduct={this.props.deleteProduct}
+          key={index}
+          index={index} />
+      );
     });
 
     return (
